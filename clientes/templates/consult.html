@@ -1,0 +1,65 @@
+{% extends "land_page.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Detalle de Cliente</h5>
+    </div>
+    {% if error %}
+        <div class="card-body">
+            <div class="row">
+                {{ error }}
+            </div>
+        </div>
+    {% else %}
+        <div class="card-body">
+            <div class="row">
+                <div class="row mt-4">
+                    <div class="col-2">
+                        <label for="id_nombre">Nombre:</label>
+                    </div>
+                    <div class="col-6">
+                        {{nombre}}
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-2">
+                        <label for="id_apellido">Apellido:</label>
+                    </div>
+                    <div class="col-6">
+                        {{apellido}}
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-2">
+                        <label for="id_email">Email:</label>
+                    </div>
+                    <div class="col-6">
+                        {{email}}
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-2">
+                        <label for="id_telefono">Telefono:</label>
+                    </div>
+                    <div class="col-6">
+                        {{telefono}}
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-2">
+                        <label for="id_nacimiento">Fecha de Nacimiento:</label>
+                    </div>
+                    <div class="col-6" id="fnacimiento">
+                        {{fecha_de_nacimiento}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% if id %}
+    <a class="btn btn-success" href="{% url 'update' pk=id %}" role="button">Actualizar</a>
+    <a class="btn btn-danger" href="{% url 'delete' pk=id %}" role="button">Eliminar</a>
+{% endif %}
+{% endblock content %} 

@@ -1,0 +1,56 @@
+{% extends "land_page.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Detalle de Cliente</h5>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="row mt-4">
+                <div class="col-2">
+                    <label for="id_nombre">Nombre:</label>
+                </div>
+                <div class="col-6">
+                    {{cliente.nombre}}
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-2">
+                    <label for="id_apellido">Apellido:</label>
+                </div>
+                <div class="col-6">
+                    {{cliente.apellido}}
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-2">
+                    <label for="id_email">Email:</label>
+                </div>
+                <div class="col-6">
+                    {{cliente.email}}
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-2">
+                    <label for="id_telefono">Telefono:</label>
+                </div>
+                <div class="col-6">
+                    {{cliente.telefono}}
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-2">
+                    <label for="id_nacimiento">Fecha de Nacimiento:</label>
+                </div>
+                <div class="col-6">
+                    {{cliente.nacimiento}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a class="btn btn-success" href="{% url 'update' pk=cliente.id %}" role="button">Actualizar</a>
+<a class="btn btn-danger" href="{% url 'delete' pk=cliente.id %}" role="button">Eliminar</a>
+
+{% endblock content %} 

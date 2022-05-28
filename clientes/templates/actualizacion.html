@@ -1,0 +1,59 @@
+{% extends "land_page.html" %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Cliente #{{book.id}} Actualizando</h5>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="row mt-4">
+                    <div class="col-2">
+                        <label for="id_nombre">Nombre:</label>
+                    </div>
+                    <div class="col-6">
+                        {{form.nombre}}
+                    </div>
+                </div>
+                {% csrf_token %}
+                <div class="row mt-4">
+                    <div class="col-2">
+                        <label for="id_apellido">Apellido:</label>
+                    </div>
+                    <div class="col-6">
+                        {{form.apellido}}
+                    </div>
+                </div>
+                {% csrf_token %}
+                <div class="row mt-4">
+                    <div class="col-2">
+                        <label for="id_email">Email:</label>
+                    </div>
+                    <div class="col-6">
+                        {{form.email}}
+                    </div>
+                </div>
+                {% csrf_token %}
+                <div class="row mt-4">
+                    <div class="col-2">
+                        <label for="id_telefono">Telefono:</label>
+                    </div>
+                    <div class="col-6">
+                        {{form.telefono}}
+                    </div>
+                </div>
+                {% csrf_token %}
+                <div class="row mt-4">
+                    <div class="col-2">
+                        <label for="id_nacimiento">Fecha de Nacimiento (yyyy-mm-dd):</label>
+                    </div>
+                    <div class="col-6">
+                        {{form.nacimiento}}
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success mt-4">Actualizar</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %} 
